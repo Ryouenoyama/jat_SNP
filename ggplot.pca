@@ -1,0 +1,9 @@
+
+data <- snpscore1118forPCA
+data2 <- data[,2:34]
+
+install.packages("ggplot2", dependencies=TRUE)
+library(ggplot2)
+
+p <- autoplot(prcomp(data2), label=TRUE,label.size=3,check_overlap = TRUE)
+p + geom_point(aes(colour=snpscore1118forPCA$location))
